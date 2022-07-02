@@ -1,6 +1,7 @@
 package io.github.brunogabriel.sample
 
 import android.content.Context
+import io.github.brunogabriel.mockpinterceptor.MockPInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
@@ -15,6 +16,12 @@ object RetrofitProvider {
             .writeTimeout(30L, TimeUnit.SECONDS)
             .readTimeout(30L, TimeUnit.SECONDS)
             .connectTimeout(30L, TimeUnit.SECONDS)
+            .addInterceptor(
+                MockPInterceptor
+                    .Builder(context)
+                    .addDelayInMillis(5_000L, 10_000L)
+                    .build()
+            )
             .build()
 
         retrofit = Retrofit.Builder()

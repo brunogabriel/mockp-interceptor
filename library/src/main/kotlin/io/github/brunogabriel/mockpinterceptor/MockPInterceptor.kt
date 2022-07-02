@@ -67,12 +67,11 @@ class MockPInterceptor private constructor(
 
         fun build() = MockPInterceptor(context, this)
 
-        fun addMinDelayInMillis(minDelay: Long) = apply {
-            this.minDelay = minDelay
-        }
-
-        fun addMaxDelayInMillis(maxDelay: Long) = apply {
-            this.maxDelay = maxDelay
+        fun addDelayInMillis(minDelay: Long, maxDelay: Long) = apply {
+            if (minDelay <= maxDelay) {
+                this.minDelay = minDelay
+                this.maxDelay = maxDelay
+            }
         }
     }
 
