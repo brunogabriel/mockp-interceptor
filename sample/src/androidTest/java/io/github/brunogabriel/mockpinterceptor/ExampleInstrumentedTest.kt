@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("io.github.brunogabriel.mockpinterceptor", appContext.packageName)
+        assertEquals("mockpinterceptor", appContext.packageName)
     }
 }

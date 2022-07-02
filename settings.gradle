@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MockpInterceptor"
 include ':sample'
+include ':library'
+include ':library-no-op'
