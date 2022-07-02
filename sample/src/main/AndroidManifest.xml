@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="io.github.brunogabriel.mockpinterceptor">
+    package="io.github.brunogabriel.mockpinterceptor.sample">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name="io.github.brunogabriel.sample.CustomApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,7 +17,7 @@
         android:theme="@style/Theme.MockpInterceptor"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="io.github.brunogabriel.sample.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
