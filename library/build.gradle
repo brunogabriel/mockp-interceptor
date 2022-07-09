@@ -1,7 +1,11 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
 }
+
+group = rootProject.groupName
+version = rootProject.versionName
 
 android {
     compileSdk rootProject.compileSdkVersion
@@ -30,7 +34,20 @@ android {
 }
 
 dependencies {
-    implementation(platform("com.squareup.okhttp3:okhttp-bom:$okhttpVersion"))
-    implementation("com.squareup.okhttp3:okhttp")
-    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    api(platform("com.squareup.okhttp3:okhttp-bom:$okhttpVersion"))
+    api("com.squareup.okhttp3:okhttp")
+    api("com.squareup.retrofit2:retrofit:$retrofitVersion")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = rootProject.groupName
+                artifactId = 'library'
+                version = rootProject.versionName
+            }
+        }
+    }
 }

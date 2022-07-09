@@ -16,6 +16,8 @@ ext {
     minSdkVersion = 21
     targetSdkVersion = 32
     compileSdkVersion = 32
+    groupName = 'io.github.brunogabriel.mockpinterceptor'
+    versionName = '0.0.1'
 }
 
 task clean(type: Delete) {
