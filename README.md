@@ -59,7 +59,7 @@ Create assets folder and pass a json file path, for example, response.json, then
 
 ```kotlin
 @MOCK(asset = "response.json", runDelay = true)
-@GET("character")
+@GET("products")
 suspend fun getProducts(): List<Product>
 ```
 
@@ -68,7 +68,7 @@ suspend fun getProducts(): List<Product>
 Mockp-Interceptor uses the following open source libraries:
 
 - [OkHttp](https://github.com/square/okhttp) - Copyright Square, Inc.
-- [Gson](https://github.com/square/retrofit) - Copyright Square, Inc.
+- [Retrofit](https://github.com/square/retrofit) - Copyright Square, Inc.
 
 ### License
 
