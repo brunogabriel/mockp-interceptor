@@ -16,7 +16,7 @@ Mockp-Interceptor is distributed through [jitpack](https://jitpack.io/#brunogabr
 
 ```groovy
 dependencies {
-    releaseImplementation 'com.github.brunogabriel.mockp-interceptor:library:0.0.1'
+    releaseImplementation 'com.github.brunogabriel.mockp-interceptor:library-no-op:0.0.1'
     debugImplementation 'com.github.brunogabriel.mockp-interceptor:library:0.0.1'
 }
 ```
